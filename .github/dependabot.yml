@@ -7,9 +7,11 @@ updates:
     # 頻度・時刻は仮の値
     schedule:
       interval: "daily"
-      time: "02:00"
+      time: "22:20"
+      timezone: "Asia/Tokyo"
   - package-ecosystem: "pip"
     directory: "/src/trainer02"
     schedule:
       interval: "daily"
-      time: "02:00"
+      time: "22:20"
+      timezone: "Asia/Tokyo"
