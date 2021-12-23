@@ -32,5 +32,5 @@ jobs:
         run: |
           cd trainer02
           poetry install
-          poetry run pytest -vv .
+          sh -c 'poetry run pytest -vv . ; ret=$?; [ $ret = 5 ] && exit 0 || exit $ret'
           exit
