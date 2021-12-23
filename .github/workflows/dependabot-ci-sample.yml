@@ -18,6 +18,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.7"
+      - name: Setup Poetry
+        run: |
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | /usr/local/bin/python -
+          echo "/root/.poetry/bin" >> $GITHUB_PATH
       - name: New dependencies for dependabot PR in trainer01
         run: |
           cd trainer01
