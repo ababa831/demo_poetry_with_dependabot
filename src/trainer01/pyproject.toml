@@ -5,7 +5,7 @@ description = ""
 authors = ["ababa831 <flvonlineconverter@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = ">=3.7.1,<4.0"
 tensorflow = "2.5.0"
 pandas = "1.2.4"
 jpholiday = "0.1.5"
