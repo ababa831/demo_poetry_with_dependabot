@@ -1,0 +1,32 @@
+name: Dependabot with Poetry CI sample
+
+on:
+  push:
+    branches:
+      - dependabot/*
+  workflow_dispatch:
+
+jobs:
+  training:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+      - name: New dependencies for dependabot PR in trainer01
+        run: |
+          cd trainer01
+          poetry install
+          poetry run pytest -vv .
+          exit
+      - name: New dependencies for dependabot PR in trainer02
+        run: |
+          cd trainer02
+          poetry install
+          poetry run pytest -vv .
+          exit
