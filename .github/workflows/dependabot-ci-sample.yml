@@ -1,7 +1,7 @@
 name: Dependabot with Poetry CI sample
 
 on:
-  pull_request:
+  push:
     branches:
       - 'dependabot/**'
   workflow_dispatch:
@@ -9,7 +9,6 @@ on:
 jobs:
   depenencies_check:
     runs-on: ubuntu-latest
-    if: contains(github.head_ref, 'dependabot')
     defaults:
       run:
         working-directory: src
