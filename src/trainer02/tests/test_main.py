@@ -52,7 +52,7 @@ def test_make_input_fn(unittest_dataset, expected_dtypes):
             errmsg = f"Invalid dtypes "
             # pytestのオプションで不一致時に数値比較が出るので,
             # errmsg内には数値比較を明示していない
-            assert feature_batch[k].dtype == expected_dtypes[k]
+            assert feature_batch[k].dtype == expected_dtypes[k], errmsg
 
 
 """
