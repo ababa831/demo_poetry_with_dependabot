@@ -13,7 +13,7 @@ absl-py = "^0.15.0"
 pytest = "^6.2.5"
 scikit-learn = "^1.0.1"
 black = "^21.12b0"
-ipython = "^7.30.1"
+ipython = "^7.31.0"
 matplotlib = "^3.5.1"
 
 [tool.poetry.dev-dependencies]
