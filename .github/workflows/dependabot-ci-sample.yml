@@ -9,9 +9,6 @@ on:
 jobs:
   depenencies_check:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
     steps:
       - uses: actions/checkout@v2
       - name: Setup python
@@ -24,13 +21,7 @@ jobs:
           echo "$HOME/.poetry/bin" >> $GITHUB_PATH
       - name: New dependencies for dependabot PR in trainer01
         run: |
-          cd trainer01
-          poetry install
-          sh -c 'poetry run pytest -vv . ; ret=$?; [ $ret = 5 ] && exit 0 || exit $ret'
-          exit
+          make TRAINER_DIR=trainer01 test-dependencies
       - name: New dependencies for dependabot PR in trainer02
         run: |
-          cd trainer02
-          poetry install
-          sh -c 'poetry run pytest -vv . ; ret=$?; [ $ret = 5 ] && exit 0 || exit $ret'
-          exit
+          make TRAINER_DIR=trainer02 test-dependencies
